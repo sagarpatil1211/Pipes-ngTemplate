@@ -1,0 +1,80 @@
+<div class="container">
+    <h2>Pipes</h2>
+    <p>Pipes are referred as filters. It helps to transform data and manage data within interpolation, denoted by <b>{{
+            symbol}}</b>.</p>
+    <p>It accepts data, arrays, integers and strings as inputs which are separated by ‘ | ’ symbol.</p>
+    <hr>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h3>1. date pipe</h3>
+            <p> without pipe : {{today}}</p>
+            <p> toady's date : {{today | date}} = <span>today | date</span></p>
+            <p> formatted date : {{today | date:'dd-MM-yyyy'}} = <span>today | date:'dd-MM-yyyy'</span></p>
+            <p> hour date : {{today | date:'hh:mm:ss'}} = <span>today | date:'hh:mm:ss'</span></p>
+            <p> short date : {{today | date:'shortDate'}} = <span>today | date:'shortDate'</span></p>
+            <p> full date : {{today | date:'fullDate'}} = <span>today | date:'fullDate'</span></p>
+
+            <hr>
+
+            <h3>2. Curreny pipe</h3>
+            <p>Without pipe {{1000}}</p>
+            <p>USD {{1000 | currency}} = <span>1000 | currency</span></p>
+            <p>INR Rs {{1000 | currency:'INR'}} = <span>1000 | currency:'INR'</span></p>
+
+        </div>
+        <div class="col-lg-6">
+            <h3>3. slice pipe</h3>
+            <p> fruits array : {{Fruits}}</p>
+            <p> Start index : {{ Fruits | slice:2}} = <span>Fruits | slice:2</span></p>
+            <p> Start and end index:- {{Fruits | slice: 1:4}} = <span>Fruits | slice: 1:4</span></p>
+            <p> Negative index:- {{Fruits | slice: -2}} = <span>Fruits | slice:-2</span></p>
+            <p class="mb-5"> Negative start and end index:- {{Fruits | slice: -4:-2}} = <span>Fruits | slice: -4:-2</span></p>
+
+            <hr>
+
+            <h3 >4. number (decimal) pipe</h3>
+            <p>Without pipe {{8.76543}}</p>
+            <p>number :- {{ 8.76543 | number}}</p>
+            <p>formatting number :- {{8.76543 | number:'2.1'}} = <span>8.76543 | number:'2.1'</span></p>
+            <p>formatting number :- {{8.76543 | number:'2.1'}} = <span>8.76543 | number:'2.1-4'</span></p>
+
+        </div> <hr>
+        <!-- ----------------------------------------------------------------- -->
+
+        <div class="col-lg-6 mt-3">
+            <h3>5. percent pipe</h3>
+            <p>without pipe 1:- {{0.8234}}</p>
+            <p>percent :- {{0.8234 | percent}} = <span>0.8234 | percent</span></p>
+            <p>percent :- {{0.8234 | percent:'2.2'}} = <span>0.8234 | percent:'2.2'</span></p>
+            <hr>
+            <h3>6. json pipe</h3>
+            <p>without pipe :- {{ fullName}} </p>
+            <p>json pipe :- {{fullName | json}}</p>
+            <p><span>{{</span> fullName | json <span>}}</span></p>
+        </div>
+
+        <div class="col-lg-6 mt-3">
+            <h2>Chained pipes</h2>
+            <p>We can combine multiple pipes together. This will be useful when a scenario associates with more than one pipe that has to be applied for data transformation.</p>
+            <p>Date, Uppercase and Lowercase are pre-defined pipes.</p>
+            <p>Date with uppercase :- {{today | date:'fullDate' | uppercase}}</p>
+            <p><span>{{</span> today | date:'fullDate' | uppercase   <span>}}</span></p>
+            <p>Date with lowercase :- {{today | date:'medium' | lowercase}}</p>
+            <p><span>{{</span> today | date:'medium' | lowercase <span>}}</span></p>
+
+        </div>
+        <hr>
+        <div class=" mt-3">
+            <h1>Custom pipe</h1>
+            <p>As we have seen already, there is a number of pre-defined Pipes available in Angular but sometimes, we may want to transform values in custom formats. </p>
+            <p>We can create custom pipe using <span>ng g p pipeName</span></p>
+            <p>When custom pipe generated , created class implements <span>PipeTransform</span> interface & must override <span>transform</span> method</p>
+
+            <p>square custom pipe :- {{5 | square}} </p>
+            <p> = <span>{{</span> 5 | square <span>}}</span></p>
+
+            
+        </div>
+    </div>
+</div>

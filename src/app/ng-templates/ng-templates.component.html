@@ -1,0 +1,27 @@
+<div class="container mt-3">
+    <h1>ng-template</h1>
+    <p><b>ng-template</b> is used to create dynamic and reusable templates</p>
+    <p>It is a virtual element.</p>
+    <p>If you compile your code with ng-template then is converted as comment in DOM.</p>
+    <h3>ng-template</h3>
+    <ng-template>ng-template tag is a virtual element</ng-template>
+    <pre>    &lt;h3>ng-template &lt;/h3>
+    &lt;ng-template>ng-template tag is a virtual element &lt;/ng-template></pre>
+    <p>If you run the application, then it will print only <b>h3</b> element. Check your page source, template is
+        displayed in comment section because it is a virtual element so it does not render anything. We need to use
+        <b>ng-template</b> along with Angular <b>directives</b>.</p>
+    <p><b>ng-template</b> should always be used inside <b>ngIf, ngFor or ngSwitch</b> directives to render
+        the result.
+    </p>
+    <hr>
+
+    <span *ngIf="show then valuetrue else valuefalse"></span>
+    <ng-template #valuetrue>
+        <h6>Show data when value <span>true</span></h6>
+    </ng-template >
+    <ng-template #valuefalse>
+        <h6>Show data when value <span>false</span></h6>
+    </ng-template>
+    <button class="btn btn-primary" (click)="changeValue()">change value</button>
+
+</div>
